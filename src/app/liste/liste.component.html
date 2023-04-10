@@ -1,0 +1,51 @@
+<!-- Contenu -->
+<div class="container">
+  
+    <div id="alertMsg">
+      <p>
+        {{ message }}
+      </p>
+    </div>
+    <div id="home" class="container">
+  
+      <!-- Utilisation de boucle ngfor -->
+      <app-article *ngFor="let element of liste"
+            [idArticle]="element.id"
+            [titreArticle]="element.titreArticle"
+            [prixArticle]="element.prixArticle" 
+            [urlImg]="element.urlImg"
+            [textAltImg]="element.textAltImg" 
+            [description]="element.description"  
+            [dispo]="element.dispo"   
+            (info)="onAffiche($event)"></app-article>
+  
+      <!-- $event contient les info contenu dans la propriete info depuis le composant enfant article -->
+      <!-- <app-article 
+            [titreArticle]=" 'Vélo' "
+            [prixArticle]="prix1" 
+            [urlImg]=" '../assets/images/velo.jpeg' " 
+            [textAltImg]=" 'Un vélo' " 
+            [description]=" 'Un super vélo tout terrain' " 
+            [dispo]="false"  
+            (info)="onAffiche($event)"></app-article>
+  
+      <app-article 
+            [titreArticle]=" 'TV' "
+            [prixArticle]="prix2"
+            [urlImg]=" '../assets/images/tv.jpeg' " 
+            [textAltImg]=" 'Une télevision' " 
+            [description]=" 'Très bonne résolution' " 
+            [dispo]="true"
+            (info)="onAffiche($event)"></app-article>
+  
+      <app-article 
+            [titreArticle]=" 'Jouet' "
+            [prixArticle]="prix3" 
+            [urlImg]=" '../assets/images/jouet.jpeg' " 
+            [textAltImg]=" 'Un jouet' " 
+            [description]=" 'Un super vélo tout terrain' " 
+            [dispo]="false"
+            (info)="onAffiche($event)"></app-article> -->
+  
+    </div>
+  </div>

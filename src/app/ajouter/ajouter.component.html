@@ -1,0 +1,41 @@
+<h1>Ajouter un nouvel article</h1>
+
+<!-- Formulaire reactive fournit un acces direct au modele objet -->
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <label>Titre</label>
+    <input type="text" [formControl]="titleToAdd">
+    <br>
+    
+    <label>Prix</label>
+    <input type="number" [formControl]="priceToAdd">
+   
+    <br>
+    <button class="btn btn-primary" type="submit">Envoyer</button>
+</form>
+
+<!-- Formulaire basé sur le template est utilisé avec le ngModel -->
+<!-- Identifiant du formulaire est f -->
+<!-- <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <label>Titre</label>
+    <input type="text" name="title" [(ngModel)]="titleToAdd" required minlength="4" #title="ngModel">
+    <div *ngIf="title.invalid && (title.dirty || title.touched)">
+        <div *ngIf="title.errors?.['required']">
+            Titre obligatoire
+        </div>
+        <div *ngIf="title.errors?.['minlength']">
+            Le titre doit avoir un minimum de 4 caractères
+        </div>
+    </div>
+    <br>
+    
+    <label>Prix</label>
+    <input type="number" name="price" [(ngModel)]="priceToAdd" required #price="ngModel">
+    <div *ngIf="price.invalid && (price.dirty || price.touched)">
+        <div *ngIf="price.errors?.['required']">
+            Prix obligatoire
+        </div>
+    </div>
+
+    <br>
+    <button class="btn btn-primary" [disabled]="!f.valid" type="submit">Envoyer</button>
+</form> -->
